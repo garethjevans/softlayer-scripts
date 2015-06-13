@@ -13,7 +13,7 @@ systemctl disable firewalld >> $LOG
 yum -y install docker >> $LOG
 
 echo "Downloading Openshift" >> $LOG
-curl -L https://github.com/openshift/origin/releases/download/v0.5.1/openshift-origin-v0.5.1-ce1e6c4-linux-amd64.tar.gz | tar xzv
+curl -L https://github.com/openshift/origin/releases/download/v0.6/openshift-origin-v0.6-e456d58-linux-amd64.tar.gz | tar xzv
 
 echo "Done" >> $LOG
 

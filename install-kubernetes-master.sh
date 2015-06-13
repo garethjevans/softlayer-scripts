@@ -1,16 +1,12 @@
 #!/bin/sh
 
 yum -y update
-yum -y install net-tools
+yum -y install net-tools ntp
 
-cat << EOF > /etc/yum.repos.d/virt7-testing.repo
-[virt7-testing]
-name=virt7-testing
-baseurl=http://cbs.centos.org/repos/virt7-testing/x86_64/os/
-gpgcheck=0
-EOF
+systemctl start ntpd
+systemctl enable ntpd
 
-yum -y install --enablerepo=virt7-testing kubernetes etcd
+yum -y install kubernetes etcd
 
 cat << EOF > start-master.sh
 #!/bin/sh

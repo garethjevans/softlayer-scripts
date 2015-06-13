@@ -1,7 +1,7 @@
 #!/bin/sh
 
 yum -y update
-yum -y install nettools
+yum -y install net-tools
 
 cat << EOF > /etc/yum.repos.d/virt7-testing.repo
 [virt7-testing]
